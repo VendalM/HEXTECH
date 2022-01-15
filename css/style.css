@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "Prata-Regular";
+  src: url("fonts/Prata-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html {
+  background-color: #000;
+}
+
+.header {
+  background-color: #ba7273;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 150px 1fr;
+  grid-template-columns: 150px 1fr;
+}
+
+.header__logo {
+  padding: 10px 0 10px 20px;
+}
+.header__logo img {
+  width: 80px;
+  height: 80px;
+}
+
+.header__nav ul {
+  list-style: none;
+}
+.header__nav li {
+  display: inline-block;
+  font-family: Prata-Regular, sans-serif;
+  font-weight: 600;
+  padding: 1.5% 2% 2% 0;
+}
+.header__nav a {
+  display: block;
+  text-decoration: none;
+  color: #383d48;
+  text-transform: uppercase;
+}
+.header__nav a:focus {
+  color: #000;
+}
+
+.main__hextech .main__hextech {
+  text-align: center;
+  color: #fdd9da;
+  font-family: Prata-Regular, sans-serif;
+  padding: 2% 0 1% 0;
+  font-size: 4em;
+  text-shadow: 1px 1px 2px black, 0 0 1em #ba7273;
+}

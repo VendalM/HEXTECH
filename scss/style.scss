@@ -1,0 +1,79 @@
+@font-face {
+// название шрифта(чтобы не запутаться лучше указать название папки со шрифтом) 
+font-family: "Prata-Regular"; 
+// адрес шрифта и тип 
+src: url("fonts/Prata-Regular.ttf") format("truetype"); 
+font-style: normal; 
+font-weight: normal; 
+} 
+
+* {
+	margin: 0;
+	padding: 0;
+
+	align-items: center;
+
+}
+
+$primary-color: #000;
+$additional-color: #ba7273;
+$nav-color: #383d48;
+$h-color: #fdd9da;
+$font-nav: Prata-Regular, sans-serif;
+$logo-size: 80px;
+
+html {
+	background-color: $primary-color;
+}
+
+.header {
+	background-color: $additional-color;
+	display: grid;
+	grid-template-columns: 150px 1fr;
+}
+
+.header__logo {
+
+	padding: 10px 0 10px 20px;
+
+	img {
+	width: $logo-size;
+	height: $logo-size;
+	}
+}
+
+.header__nav {
+
+ ul {
+    list-style: none;
+ 	}
+  
+  li { 
+  	display: inline-block; 
+  	font-family: $font-nav;
+  	font-weight: 600;
+  	padding: 1.5% 2% 2% 0;
+	}
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: $nav-color;
+    text-transform: uppercase;
+	}
+
+	a:focus {
+		color: $primary-color;
+	}
+}
+
+.main__hextech {
+	.main__hextech {
+		text-align: center;
+		color: $h-color;
+		font-family: $font-nav;
+		padding: 2% 0 1% 0;
+		font-size: 4em;
+		text-shadow: 1px 1px 2px black, 0 0 1em $additional-color;
+	}
+}
