@@ -31,11 +31,17 @@ html {
 	background-color: $primary-color;
 }
 
+::-webkit-scrollbar { width: 0;}
+
 .header, .footer {
 	background-color: $additional-color;
 	display: grid;
 	grid-template-columns: 150px 1fr;
 	box-shadow: inset 0 0px 20px 5px $shadow-color;
+}
+
+.footer {
+	margin-top: 2%;
 }
 
 .header__logo {
@@ -68,6 +74,10 @@ html {
     text-transform: uppercase;
 	}
 
+	a:hover {
+		color: $primary-color;
+	}
+
 	a:focus {
 		color: $primary-color;
 	}
@@ -78,14 +88,13 @@ html {
 	background-repeat:no-repeat;
 
 	.main__hextech__info {
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: column;
-		align-items:center;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 	}
 
 	.main__hextech__info_pic_body {
-		width: 60vw;
+		width: 40vw;
+		padding: 0 0 0 10%;
 	}
 }
 
@@ -107,15 +116,14 @@ html {
 		font-size: 1.2em;
 	}
 
-	.main__about_technology__info {
-		display: flex;
-		flex-wrap: nowrap;
-		flex-direction: column;
-		align-items:center;
+.main__about_technology__info {
+		display: grid;
+		grid-template-columns: 1fr 20%;
 
 		.main__about_technology__info_txt {
-			padding: 0 5% 0 5%;
+			padding: 0;
 		}
+		
 	}
 
 .main__about_technology__info {
@@ -124,8 +132,8 @@ html {
 
 .main__about_technology__info_but {
 	background-image: linear-gradient( 135deg, $additional-color 0%, $primary-color 100%);
-	min-width: 10vw;
-	min-height: 6vh;
+	min-width: 250px;
+	min-height: 60px;
 	border-radius: 220px;
 	border: 2px solid $shadow-color;
 	color: $h-color;
@@ -146,13 +154,17 @@ html {
 
 .main__about_exmp_info {
 	display: grid;
-	grid-template-columns: 1fr 1fr 250px;
+	grid-template-columns: 1fr 1fr 8vw;
 	padding: 0 4% 0 4%;
+}
+
+.main__about_exmp_info_dop {
+	margin: 0 6% 0 -5%;
 }
 
 .main__about_exmp_info_pic {
 	border: 2px solid $additional-color-second;
-	max-width: 30vw;
+	width: 30vw;
 }
 
 .main__about_exmp_info_pic_body {
@@ -160,20 +172,34 @@ html {
 	margin: 40px 40px -40px 40px;
 }
 
+.main__about_exmp_info_ch_fas_look {
+	color: $additional-color-second;
+	font-size: 2vw;
+	border: 2px solid $additional-color-second;
+	padding: 30px;
+	border-radius: 120px;
+}
+
+.main__about_exmp_info_ch_fas_look:hover {
+	cursor: pointer;
+	color: $additional-color;
+	border: 2px solid $additional-color;
+}
+
 .main__hextech__txt_second_type {
 	  color: $additional-color-second;
 		font-family: $font-nav;
-		padding: 2% 4% 0 5%;
+		padding: 1% 1% 0 5%;
 		font-size: 1.2em;
 }
 
 .main__about_sources_info_rol_one_tp  {
-    margin: 2% 4% 2% 4%;
+    margin: 1% 4% 3% 4%;
 }
 
 .main__about_sources_info_rol_one_tp, .main__about_sources_info_rol_second_pic {
   border: 2px solid $additional-color-second;
-  max-width: 40vw;
+  width: 40vw;
  }
 
 .main__about_sources_info_rol_one_tp_pic_body, .main__about_sources_info_rol_second_pic_body {
@@ -186,7 +212,7 @@ html {
 	flex-wrap: nowrap;
 	flex-direction: column;
 	align-items: flex-end;
-	padding: 4% 4% 2% 0;
+	padding: 1% 4% 2% 0;
 }
 
 .footer__nav {
@@ -196,48 +222,211 @@ html {
 	}
 }
 
-@media (min-width: 1440px) {
-.main__about_technology__info {
-		display: flex;
-		flex-wrap: nowrap;
-		flex-direction: row;
-		align-items:center;
+@media (max-width: 1400px) and (min-width: 1200px) {
+	.main__about_technology__info {
+		grid-template-columns: none;
+		grid-template-rows: 70% 30%;
 
-		.main__about_technology__info_txt {
-			padding: 0;
+		.main__about_technology__info_buts {
+			margin: 2% auto;
 		}
-		
+
+		.main__about_technology__info_but {
+			margin: 0 auto;
+		}
+	}
+}
+
+@media (max-width: 1199px) and (min-width: 768px){
+	.main__about_technology__info {
+		grid-template-columns: none;
+		grid-template-rows: 70% 30%;
+
+		.main__about_technology__info_buts {
+			margin: 2% auto;
+		}
+
+		.main__about_technology__info_but {
+			margin: 0 auto;
+		}
+	}
+
+	.main__about_exmp_info {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 40% 20%;
+		justify-items: center;
+		padding-bottom: 15%
+	}
+	.main__about_exmp_info_dop {
+		margin: 0;
+		text-align: center;
+	}
+
+	.main__about_sources_info_rol_second_tp {
+		display: block;
+	  padding: 0;
+	}
+
+	.main__about_sources_info_rol_one_tp, .main__about_sources_info_rol_second_pic {
+		margin: 4% auto;
+	}
+
+} 
+
+@media (max-width: 767px) and (min-width: 425px) {
+
+	.main__hextech .main__hextech__info {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		justify-items: center;
+	}
+
+	.main__hextech_h {
+		text-align: center;
+		font-family: $font-nav;
+		padding: 2% 0 2% 0;
+		font-size: 24px;
 	}
 
 .main__about_technology__info {
-  padding: 0 5% 0 5%;
-}
-}
+		grid-template-columns: none;
+		grid-template-rows: 1fr;
+		padding: 2% 0 0 0;
 
-@media (min-width: 1200px) {
-	.main__hextech{
+		.main__about_technology__info_buts {
+			margin: 2% auto;
+		}
 
-	padding: 0 15% 0 15%;
+		.main__about_technology__info_but {
+			margin: 0 auto;
+			min-width: 170px;
+		}
 
-	.main__hextech__info {
-		display: flex;
-		flex-wrap: nowrap;
-		flex-direction: row;
-		align-content: stretch;
+	}
+	.main__about_exmp_info_pic {
+		width: 45vw;
 	}
 
-	.main__hextech__info_pic_body {
-		width: 40vh;
-	}
+.main__about_exmp_info_pic_body {
+	width: 45vw;
 }
 
-}
 
-@media (max-width: 768px) {
-
-.main__hextech_h {
-		font-size: 2em;
-		padding: 5% 0 5% 0;
+	.main__about_exmp_info {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 40% 5%;
+		justify-items: center;
+		padding-bottom: 15%
+	}
+	.main__about_exmp_info_dop {
+		margin: 0;
+		text-align: center;
 	}
 
+	.main__about_exmp_info_ch_fas_look {
+		padding: 15px;
+	}
+
+	.main__about_sources_info_rol_second_tp {
+		padding-bottom: 2%;
+	}
+
+	.main__about_sources_info_rol_second_tp,.main__about_sources_info_rol_one_tp {
+		display: block;
+	}
+
+	.main__about_sources_info_rol_one_tp, .main__about_sources_info_rol_second_pic {
+		margin: 4% auto;
+		width: 55vw;
+	}
+
+	.main__about_sources_info_rol_second_pic_body, .main__about_sources_info_rol_one_tp_pic_body {
+		width: 55vw;
+	}
+
+	.footer {
+		margin-top: 8%;
+	}
+
+}
+
+@media (max-width: 424px) {
+	.main__hextech .main__hextech__info {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		justify-items: center;
+	}
+
+	.main__hextech_h {
+		text-align: center;
+		font-family: $font-nav;
+		padding: 2% 0 2% 0;
+		font-size: 24px;
+	}
+
+.main__about_technology__info {
+		grid-template-columns: none;
+		grid-template-rows: 1fr;
+		padding: 2% 0 0 0;
+
+		.main__about_technology__info_buts {
+			margin: 4% 0 0 27%;
+		}
+
+		.main__about_technology__info_but {
+			margin: 2% 0 0 0;
+			min-width: 170px;
+		}
+
+	}
+	.main__about_exmp_info_pic {
+		width: 50vw;
+	}
+
+.main__about_exmp_info_pic_body {
+	width: 50vw;
+	margin: 20px 20px -20px 20px;
+}
+
+
+	.main__about_exmp_info {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 270px;
+		justify-items: center;
+		padding-bottom: 15%
+	}
+	.main__about_exmp_info_dop {
+		margin: 0;
+		text-align: center;
+	}
+
+	.main__about_exmp_info_ch_fas_look {
+		padding: 15px;
+	}
+
+	.main__about_sources_info_rol_second_tp {
+		padding-bottom: 2%;
+	}
+
+	.main__about_sources_info_rol_second_tp,.main__about_sources_info_rol_one_tp {
+		display: block;
+	}
+
+	.main__about_sources_info_rol_one_tp, .main__about_sources_info_rol_second_pic {
+		margin: 4% auto;
+		width: 70vw;
+	}
+
+	.main__about_sources_info_rol_second_pic_body, .main__about_sources_info_rol_one_tp_pic_body {
+		width: 70vw;
+	}
+
+	.footer {
+		margin-top: 8%;
+	}
 }
