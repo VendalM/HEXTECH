@@ -51,17 +51,23 @@ html {
   font-weight: 600;
   padding: 1.5% 2% 2% 0;
 }
-.header__nav a, .footer__nav a {
+.header__nav .header__nav_on, .footer__nav .header__nav_on {
   display: block;
   text-decoration: none;
   color: #383d48;
   text-transform: uppercase;
 }
-.header__nav a:hover, .footer__nav a:hover {
+.header__nav .header__nav_on:hover, .footer__nav .header__nav_on:hover {
   color: #000;
 }
-.header__nav a:focus, .footer__nav a:focus {
+.header__nav .header__nav_on:focus, .footer__nav .header__nav_on:focus {
   color: #000;
+}
+.header__nav .header__nav_des, .footer__nav .header__nav_des {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
 }
 
 .main__hextech {
@@ -184,6 +190,7 @@ html {
 .main__about_sources_info_rol_one_tp, .main__about_sources_info_rol_second_pic {
   border: 2px solid #7fd7dc;
   width: 40vw;
+  cursor: pointer;
 }
 
 .main__about_sources_info_rol_one_tp_pic_body, .main__about_sources_info_rol_second_pic_body {
@@ -212,6 +219,22 @@ html {
 }
 .footer__nav li {
   padding-bottom: 8%;
+}
+
+.main__about_exmp_video {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+}
+
+.main__about_exmp_video_body {
+  width: 920px;
+  height: 450px;
+  padding: 2% 0 2% 0;
+}
+
+.main__about_exmp_p {
+  padding: 2% 0 2% 0;
 }
 
 @media (max-width: 1400px) and (min-width: 1200px) {
@@ -296,6 +319,12 @@ html {
 
   .main__about_sources_info_rol_one_tp, .main__about_sources_info_rol_second_pic {
     margin: 4% auto;
+  }
+
+  .main__about_exmp_video_body {
+    width: 50%;
+    height: 240px;
+    padding: 2% 0 4% 0;
   }
 }
 @media (max-width: 767px) and (min-width: 425px) {
@@ -403,6 +432,12 @@ html {
   .footer {
     margin-top: 8%;
   }
+
+  .main__about_exmp_video_body {
+    width: 70%;
+    height: 240px;
+    padding: 2% 0 4% 0;
+  }
 }
 @media (max-width: 424px) {
   .main__hextech .main__hextech__info {
@@ -504,5 +539,11 @@ html {
 
   .footer {
     margin-top: 8%;
+  }
+
+  .main__about_exmp_video_body {
+    width: 80%;
+    height: 240px;
+    padding: 2% 0 4% 0;
   }
 }
